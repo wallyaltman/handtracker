@@ -38,11 +38,18 @@ class TemplatesController < ApplicationController
 
   def toggle_public
     @tpl = Template.find(params[:id])
-    @tpl.update_attribute(:public, params[:public])
+    @tpl.update_attribute(:public, !@tpl.public)
     flash[:notice] = "Public toggled."
     redirect_to template_url(@tpl)
   end
-  
+
+  def toggle_auto_shuffle
+    @tpl = Template.find(params[:id])
+    @tpl.update_attribute(:auto_shuffle, !@tpl.auto_shuffle)
+    flash[:notice] = "Auto-shuffle toggled."
+    redirect_to template_url(@tpl)
+  end
+
   private
   
   def user_status

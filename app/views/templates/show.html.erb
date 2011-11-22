@@ -15,9 +15,26 @@
 		<h2>Public?</h2>
 		<% if @owner %>
 			<% if @tpl.public %>
-				<%= link_to 'make un-public', toggle_public_template_url(@tpl), :public => 0 %>
+				<%= link_to 'make un-public', toggle_public_template_url(@tpl) %>
 			<% else %>
-				<%= link_to 'make public', toggle_public_template_url(@tpl), :public => 1 %>
+				<%= link_to 'make public', toggle_public_template_url(@tpl) %>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="view">
+		<% if @tpl.auto_shuffle %>
+			Decks created from this template will be shuffled automatically.
+		<% else %>
+			The cards in new decks created from this template will be ordered as below.
+		<% end %>
+	</div>
+	<div class="guide">
+		<h2>Auto-Shuffle?</h2>
+		<% if @owner %>
+			<% if @tpl.auto_shuffle %>
+				<%= link_to 'unset auto-shuffle', toggle_auto_shuffle_template_url(@tpl) %>
+			<% else %>
+				<%= link_to 'set auto-shuffle', toggle_auto_shuffle_template_url(@tpl) %>
 			<% end %>
 		<% end %>
 	</div>

@@ -11,6 +11,7 @@ Handtracker::Application.routes.draw do
   resources :templates do
     member do
       get :toggle_public
+      get :toggle_auto_shuffle
     end
     resources :cards do
       member do

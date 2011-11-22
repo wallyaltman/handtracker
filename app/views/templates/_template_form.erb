@@ -21,10 +21,12 @@
 <div class="object_box ">
 	<div class="view">
 		<%= f.check_box :public %> - check if you want this template to be usable by all users. Please only do this for complete templates.<br />
+		<%= f.check_box :auto_shuffle %> - check if you want decks created from this template to be shuffled automatically.<br />
 		<%= f.submit 'Create' %>
 		<% end %>
 	</div>
 	<div class="guide">
 		<h2>Public?</h2>
+		<h2>Auto-Shuffle?</h2>
 	</div>
 </div>

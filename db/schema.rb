@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811210537) do
+ActiveRecord::Schema.define(:version => 20111122202634) do
 
   create_table "acts", :force => true do |t|
     t.integer  "game_id",       :null => false
@@ -75,7 +75,8 @@ ActiveRecord::Schema.define(:version => 20110811210537) do
   create_table "templates", :force => true do |t|
     t.string  "name"
     t.integer "user_id"
-    t.boolean "public",  :default => true
+    t.boolean "public",       :default => true
+    t.boolean "auto_shuffle", :default => true
   end
 
   create_table "users", :force => true do |t|
